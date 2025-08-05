@@ -4,6 +4,8 @@
   "description": "A user interface that allows customers to browse items in a retail catalog.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
     "test": "test"
   },
   "repository": {
@@ -20,5 +22,26 @@
   "bugs": {
     "url": "https://github.com/HR-CtrlAltElite/Greenfield/issues"
   },
-  "homepage": "https://github.com/HR-CtrlAltElite/Greenfield#readme"
+  "homepage": "https://github.com/HR-CtrlAltElite/Greenfield#readme",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "axios": "^1.11.0",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.1",
+    "express": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "react-redux": "^9.2.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
 }
