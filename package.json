@@ -1,0 +1,24 @@
+{
+  "name": "greenfield",
+  "version": "1.0.0",
+  "description": "A user interface that allows customers to browse items in a retail catalog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HR-CtrlAltElite/Greenfield.git"
+  },
+  "keywords": [
+    "ui",
+    "product",
+    "catalog"
+  ],
+  "author": "ctrl-alt-elite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HR-CtrlAltElite/Greenfield/issues"
+  },
+  "homepage": "https://github.com/HR-CtrlAltElite/Greenfield#readme"
+}
