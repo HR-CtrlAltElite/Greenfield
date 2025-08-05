@@ -1,8 +1,8 @@
 import React from 'react';
-import "./styles.css";
+import './styles.css';
 
-const App = () => {
-  return(
+function App() {
+  return (
     <h1>This is my App!</h1>
   );
 }
