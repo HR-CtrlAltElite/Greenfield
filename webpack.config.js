@@ -28,7 +28,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // new Dotenv(),
     // This will allow you to refer to process.env variables
     // within client-side files at build-time:
     new webpack.DefinePlugin({
