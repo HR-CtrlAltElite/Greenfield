@@ -1,12 +1,11 @@
-// index for q&a subcomponents
-
 import React from 'react';
-import axios from 'axios';
+import Question from './Question';
 
 function QA() {
   return (
     <div>
       Q & A Module
+      <Question product_id={'40347'} />
     </div>
   );
 }
