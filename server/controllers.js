@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const api = axios.create({
-  baseURL: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/',
+  baseURL: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp',
   headers: {
     Authorization: process.env.API_KEY,
   },
@@ -16,9 +16,9 @@ function getReviews({ id, count, page }) {
       throw new Error(err);
     });
 }
-function getQuestions (req, res) {
+function getQuestions(req, res) {
   const product_id = req.params.product_id || '40347';
-  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/qa/questions', { params: { product_id: product_id }, headers: { Authorization: process.env.API_KEY } })
+  api.get('/qa/questions', { params: { product_id: product_id } })
     .then((response) => {
       res.json(response.data);
     })

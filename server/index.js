@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const path = require('path');
-const { getReviews } = require('./controllers');
+const controllers = require('./controllers');
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.route('/reviews/:id/count/:count/page/:page')
       count: req.params.count,
       page: req.params.page,
     };
-    getReviews(data)
+    controllers.getReviews(data)
       .then((reviews) => {
         res.status(200).json(reviews);
       }).catch((err) => {

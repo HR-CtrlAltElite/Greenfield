@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import Overview from './Overview';
 import Related from './Related';
-import QA from './QA';
+import QA from './QA/components';
 import Ratings from './Ratings';
 
 function App() {
