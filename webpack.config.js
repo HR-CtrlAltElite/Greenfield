@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -28,6 +29,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: "Greenfield",
+    }),
     // This will allow you to refer to process.env variables
     // within client-side files at build-time:
     new webpack.DefinePlugin({
