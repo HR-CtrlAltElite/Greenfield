@@ -1,11 +1,10 @@
-// index for ratings&reviews subcomponents
-
 import React from 'react';
+import ReviewsList from './ratings/components/ReviewsList';
 
 function Ratings() {
   return (
-    <div>
-      Ratings & Reviews Module
+    <div className="ratings-wrapper">
+      <ReviewsList />
     </div>
   );
 }
