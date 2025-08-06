@@ -3,7 +3,7 @@ import React from 'react';
 
 function ReviewsList({ review }) {
   return (
-    <div className="reviews-list-wrapper">
+    <div className="review-tile-wrapper">
       <h2>Review Tile:</h2>
       <p>{review.review_id}</p>
     </div>
