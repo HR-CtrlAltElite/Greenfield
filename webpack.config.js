@@ -1,14 +1,16 @@
+require('dotenv').config();
+
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.jsx',
+  mode: 'development',
+  entry: path.join(__dirname, '/client/src/index.jsx'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, '/client/dist'),
     filename: 'bundle.js',
   },
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -26,19 +28,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
+    // new Dotenv(),
+    // This will allow you to refer to process.env variables
+    // within client-side files at build-time:
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_KEY: JSON.stringify(process.env.API_KEY),
+      },
     }),
-    new Dotenv(),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    port: 3000,
-    hot: true,
-    open: true,
-  },
-  mode: 'development',
 };
