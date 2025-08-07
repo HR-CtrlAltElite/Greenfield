@@ -32,7 +32,7 @@ function getQuestions(req, res) {
 function getAnswers(req, res) {
   const question_id = req.params.question_id;
   // console.log('count', req.query.count);
-  api.get(`/qa/questions/${question_id}/answers`, { params: { count: req.query.count } })
+  api.get(`/qa/questions/${question_id}/answers`, { params: { page: req.query.page, count: '2' } })
     .then((response) => {
       res.json(response.data);
     })

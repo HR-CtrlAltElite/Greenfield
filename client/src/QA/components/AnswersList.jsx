@@ -5,26 +5,28 @@ import { useState, useEffect } from 'react';
 function AnswersList({ question_id }) {
   const [answers, setAnswers] = useState([]);
   const [gotAll, setGotAll] = useState(false);
-  const [count, setCount] = useState(2);
+  const [page, setPage] = useState(1);
   useEffect(() => {
-    axios.get(`/questions/${question_id}/answers`, { params: { count: count.toString() } })
-      .then((response) => {
-        console.log('ADDED 2 ANSWERS FOR question', question_id, ':', response.data.results);
-        if (response.data.results) {
-          setAnswers(response.data.results);
-        } else {
-          console.log('got all!');
-          setGotAll(true);
-        }
-      })
-      .catch((err) => {
-        throw new Error(err);
-      });
-  }, [count]);
+    if (!gotAll) {
+      axios.get(`/questions/${question_id}/answers`, { params: { page: page.toString() } })
+        .then((response) => {
+          console.log('ADDED 2 ANSWERS FOR question', question_id, ':', response.data.results);
+          if (response.data.results.length === 0) {
+            console.log('got all!');
+            setGotAll(true);
+          } else {
+            setAnswers(answers.slice().concat(response.data.results));
+          }
+        })
+        .catch((err) => {
+          throw new Error(err);
+        });
+    }
+  }, [page]);
   function loadMoreAnswers() {
     // show all remaining answers
     // confined to half the screen and scrollable
-    setCount(count + 2);
+    setPage(page + 1);
   }
   return (
     <div>
