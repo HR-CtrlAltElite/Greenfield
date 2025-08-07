@@ -18,9 +18,11 @@ function getReviews({ id, count, page }) {
 }
 
 function getQuestions(req, res) {
-  const product_id = req.params.product_id || '40348';
+  const product_id = req.query.product_id || '40348';
+  // console.log('p_id', product_id);
   api.get('/qa/questions', { params: { product_id: product_id } })
     .then((response) => {
+      //console.log('controller', response.data);
       res.json(response.data);
     })
     .catch((err) => {

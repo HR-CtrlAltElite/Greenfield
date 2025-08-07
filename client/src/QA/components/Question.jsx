@@ -11,9 +11,9 @@ function Question({ question }) {
     <div>
       <div className={styles.green}>
         Q:
-        {question}
+        {question.question_body}
       </div>
-      <AnswersList question_id={question.question_id}/>
+      <AnswersList key={`answers_${question.question_id}`} question_id={question.question_id}/>
     </div>
   );
 }

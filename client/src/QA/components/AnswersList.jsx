@@ -28,7 +28,7 @@ function AnswersList({ question_id }) {
   }
   return (
     <div>
-      {answers.map((answer) => <li>{answer.body}</li>)}
+      {answers.map((answer) => <li key={answer.answer_id}>{answer.body}</li>)}
       <input type="button" value="Load More Answers" onClick={loadMoreAnswers} />
     </div>
   );
