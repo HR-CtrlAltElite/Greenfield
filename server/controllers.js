@@ -16,18 +16,29 @@ function getReviews({ id, count, page }) {
       throw new Error(err);
     });
 }
+
 function getQuestions(req, res) {
-  const product_id = req.params.product_id || '40347';
+  const product_id = req.params.product_id || '40348';
   api.get('/qa/questions', { params: { product_id: product_id } })
     .then((response) => {
       res.json(response.data);
     })
     .catch((err) => {
-      console.log(err);
-      res.send('could not hit API');
+      throw new Error(err);
     });
-};
+}
+function getAnswers({ params: { question_id } }, res) {
+  // const question_id = req.params.question_id;
+  api.get(`/qa/questions/${question_id}/answers`)
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
+}
 module.exports = {
   getReviews,
   getQuestions,
+  getAnswers,
 };

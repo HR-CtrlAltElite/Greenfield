@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import AnswersList from './AnswersList';
 
 function Question({ question }) {
   // given the question as a prop, find all answers associated with that question, sorted
@@ -12,18 +13,9 @@ function Question({ question }) {
   return (
     <div>
       <div>
-        Q:
-        {question}
+        {`Q: ${question.question_body}`}
       </div>
-      <ul>
-        A:
-        <li>
-          [answer 1 when sorted]
-        </li>
-        <li>
-          [answer 2 when sorted]
-        </li>
-      </ul>
+      <AnswersList question_id={question.question_id}/>
       <input type="button" value="Load More Answers" onClick={loadMoreAnswers} />
     </div>
   );
