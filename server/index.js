@@ -11,6 +11,8 @@ app.use(express.json());
 
 // define routes as needed
 // ex: app.get('/products', controllers.getProducts);
+
+// Questions Routes:
 app.get('/questions/:product_id', controllers.getQuestions);
 
 // Reviews Routes:
