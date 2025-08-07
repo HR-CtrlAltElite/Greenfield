@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import AnswersList from './AnswersList';
+import * as styles from '../qanda.module.css';
 
 function Question({ question }) {
   // given the question as a prop, find all answers associated with that question, sorted
@@ -8,8 +9,9 @@ function Question({ question }) {
 
   return (
     <div>
-      <div>
-        {`Q: ${question.question_body}`}
+      <div className={styles.green}>
+        Q:
+        {question}
       </div>
       <AnswersList question_id={question.question_id}/>
     </div>

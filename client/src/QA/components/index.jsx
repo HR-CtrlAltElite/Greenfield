@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Question from './Question';
+import * as styles from '../qanda.module.css';
 
 function QA() {
   const [questions, setQuestions] = useState([]);
