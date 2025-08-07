@@ -1,30 +1,19 @@
 import React from 'react';
 import axios from 'axios';
+import AnswersList from './AnswersList';
+import * as styles from '../qanda.module.css';
 
 function Question({ question }) {
   // given the question as a prop, find all answers associated with that question, sorted
   // sort first by seller, then by helpfulness without upending seller answers
-  function loadMoreAnswers() {
-    // show all remaining answers
-    // confined to half the screen and scrollable
-  }
 
   return (
     <div>
-      <div>
+      <div className={styles.green}>
         Q:
-        {question}
+        {question.question_body}
       </div>
-      <ul>
-        A:
-        <li>
-          [answer 1 when sorted]
-        </li>
-        <li>
-          [answer 2 when sorted]
-        </li>
-      </ul>
-      <input type="button" value="Load More Answers" onClick={loadMoreAnswers} />
+      <AnswersList key={`answers_${question.question_id}`} question_id={question.question_id}/>
     </div>
   );
 }
