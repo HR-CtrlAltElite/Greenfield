@@ -27,9 +27,10 @@ function getQuestions(req, res) {
       throw new Error(err);
     });
 }
-function getAnswers({ params: { question_id } }, res) {
-  // const question_id = req.params.question_id;
-  api.get(`/qa/questions/${question_id}/answers`)
+function getAnswers(req, res) {
+  const question_id = req.params.question_id;
+  // console.log('count', req.query.count);
+  api.get(`/qa/questions/${question_id}/answers`, { params: { count: req.query.count } })
     .then((response) => {
       res.json(response.data);
     })
