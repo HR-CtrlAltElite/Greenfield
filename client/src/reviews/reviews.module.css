@@ -1,0 +1,25 @@
+/* reviews.module.css */
+
+.reviewTileWrapper {
+  background: rgb(250, 250, 250);
+  padding: 15px;
+  margin-bottom: 10px;
+  border: solid #ccc 1px;
+  width: 800px;
+}
+
+.reviewTileHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewTitleResponse {
+  background: #eeeeee;
+  padding: 20px;
+}
+
+.reviewTitleResponseTitle {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
