@@ -23,14 +23,27 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.css$/i,
+        test: /\.module\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: /\.module\.css$/,
         use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Greenfield",
+      title: 'Greenfield',
     }),
     // This will allow you to refer to process.env variables
     // within client-side files at build-time:

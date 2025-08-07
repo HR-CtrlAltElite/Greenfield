@@ -9,6 +9,7 @@ function ReviewsList() {
 
   useEffect(() => {
     ReviewsServices.getReviews(Reviews.product, Reviews.count, Reviews.page, (data) => {
+      console.log(data.results);
       setReviews(data.results);
     });
   }, []);
